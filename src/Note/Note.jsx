@@ -6,13 +6,14 @@ class Note extends Component {
 
   constructor(props){
     super(props);
-    this.message = "hello from note component"
+    this.NoteContent = props.NoteContent;
+    this.NoteId = props.NoteId;
   }
 
   render(props){
     return(
-      <div>
-        <h1>{this.message}</h1>
+      <div className="note fade-in">
+        <p className="noteContent">{this.noteContent}</p>
       </div>
     )
   }
@@ -21,6 +22,7 @@ class Note extends Component {
 
 
 Note.propTypes = {
+  noteContent: PropTypes.string
 }
 
 export default Note;
