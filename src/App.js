@@ -11,7 +11,7 @@ class App extends Component {
       notes: [
         {id: 1, noteContent: "note 1"},
         {id: 2, noteContent: "note2"}
-      ], 
+      ]
     }
   }
 
@@ -22,7 +22,16 @@ class App extends Component {
           <div className="heading">React Firebase To Do List</div>
         </div>
         <div className="notesBody">
-          <Note noteContent={} noteId={} key={}/>
+          {
+            this.state.notes.map((note) => {
+              return (
+                //<Note noteContent={note.noteContent} noteId={note.id} key={note.id}/>
+                <p>{note.id} : {note.noteContent}</p>
+                )
+            })
+              
+          }
+          
         </div>
         <div className="notesFooter">
           Footer will go here...
