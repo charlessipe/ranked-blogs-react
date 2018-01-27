@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import Note from './Note/Note'
+import NoteForm from './NoteForm/NoteForm'
 import './App.css';
 
 class App extends Component {
@@ -9,9 +10,11 @@ class App extends Component {
     super(props);
     this.state = {
       notes: [
-        {id: 1, noteContent: "note 1"},
-        {id: 2, noteContent: "note2"}
+        {id: 1, noteContent: "awesome"},
+        {id: 2, noteContent: "podcasts"},
+        {id: 3, noteContent: "moz.com"}
       ]
+      
     }
   }
 
@@ -19,14 +22,14 @@ class App extends Component {
     return (
       <div className="notesWrapper">
         <div className="notesHeader">
-          <div className="heading">React Firebase To Do List</div>
+          <div className="heading">React Firebase To Do List Hi</div>
         </div>
         <div className="notesBody">
           {
             this.state.notes.map((note) => {
               return (
-                //<Note noteContent={note.noteContent} noteId={note.id} key={note.id}/>
-                <p>{note.id} : {note.noteContent}</p>
+                <Note noteContent={note.noteContent} noteId={note.id} key={note.id} />
+                //<p>{note.id} : {note.noteContent}</p>
                 )
             })
               
@@ -34,7 +37,7 @@ class App extends Component {
           
         </div>
         <div className="notesFooter">
-          Footer will go here...
+          <NoteForm />
         </div>
       </div>
     );
