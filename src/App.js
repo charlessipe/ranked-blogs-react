@@ -65,7 +65,7 @@ class App extends Component {
     return (
       <div className="notesWrapper">
         <div className="notesHeader">
-          <div className="heading">React Display Blogs</div>
+          <div className="heading">React Get Data from Firebase Database</div>
         </div>
         <div className="notesBody">
           {
