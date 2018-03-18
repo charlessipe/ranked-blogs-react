@@ -6,22 +6,16 @@ class Note extends Component {
 
   constructor(props){
     super(props);
-    this.noteContent = props.noteContent;
-    this.noteId = props.noteId;
-    this.handleRemoveNote = this.handleRemoveNote.bind(this)
-  }
-
-  handleRemoveNote(id){
-    this.props.removeNote(id);
+    this.noteName=props.noteName;
+    this.noteUrl=props.noteUrl;
+    //this.noteContent = props.noteContent;
+    //this.noteId = props.noteId;
   }
 
   render(props){
     return(
       <div className="note fade-in">
-        <span className="closebtn" onClick={() => this.handleRemoveNote(this.noteId)}>
-        &times;
-        </span>
-        <p className="noteContent">{this.noteId} : {this.noteContent}</p>
+        <p className="noteContent">{this.name} : {this.mainUrl}</p>
       </div>
     )
   }
