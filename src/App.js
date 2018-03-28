@@ -15,7 +15,7 @@ class App extends Component {
     //this.addNote = this.addNote.bind(this);
 
     this.app = firebase.initializeApp(DB_CONFIG);
-    this.database = this.app.database().ref().child('/personal-development');
+    this.database = this.app.database().ref().child('/online-marketing');
 
     this.state = {
       notes: [],
@@ -88,12 +88,24 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Blog List</h1>
-        <ul>
-        {this.state.notes.map(e => (
-          <li key={e.name}>{e.name}: <span>URL:</span>{e.mainUrl} <span> Linking sites: {e.linkingsites}</span> <span>Latest article: </span> <a href={e.rssUrl}>{e.rssTitle}</a></li>
-        ))}
-        </ul>            
+        <h1>Ranked Blogs</h1>
+       
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th>Number</th>
+              <th>Name</th>
+              <th>Links</th>
+              <th>Article</th>
+            </tr>
+          </thead>
+          <tbody>
+              {this.state.notes.map(e => (
+                <tr key={e.name}><td>{e.name}</td><td><a href={e.mainUrl}>{e.name}</a></td> <td>{e.linkingsites}</td> <td><a href={e.rssUrl}>{e.rssTitle}</a></td></tr>
+              ))}
+
+          </tbody>
+        </table>
       </div>
     );
   }

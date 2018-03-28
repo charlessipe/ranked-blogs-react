@@ -11,3 +11,13 @@ body {
   background-attachment: fixed;
   background-size: cover; 
 }
+
+th {
+  background-color:cornsilk;
+  color: black;
+}
+
+td {
+  background-color: floralwhite;
+  color: black;
+}
